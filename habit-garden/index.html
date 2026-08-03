@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="Habit Garden - Bangun kebiasaan baik, tumbuhkan kebun impianmu.">
+    <title>🌱 Habit Garden</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icons/icon-192.png">
+</head>
+<body>
+
+<header class="header">
+    <h1>🌱 Habit Garden</h1>
+
+    <p class="subtitle">
+        Rawat kebiasaanmu, tumbuhkan kebunmu.
+    </p>
+</header>
+
+<!-- Dashboard -->
+
+<section class="dashboard">
+
+    <div class="card">
+        <h3>🔥 Streak</h3>
+        <h2 id="streak">0 Hari</h2>
+    </div>
+
+    <div class="card">
+        <h3>⭐ Level</h3>
+        <h2 id="level">1</h2>
+    </div>
+
+    <div class="card">
+        <h3>🌿 Garden Health</h3>
+        <h2 id="garden-health">100%</h2>
+    </div>
+
+</section>
+
+<!-- Progress -->
+
+<section class="progress-section">
+
+    <h2>Progress Hari Ini</h2>
+
+    <div class="progress-bar">
+
+        <div class="progress-fill"
+             id="progress-fill"
+             style="width:0%;">
+
+        </div>
+
+    </div>
+
+    <p id="progress-text">0 / 0 Habit Selesai</p>
+
+</section>
+
+<!-- Habit -->
+
+<section class="habit-section">
+
+    <div class="section-title">
+
+        <h2>📋 Habit Hari Ini</h2>
+
+        <button id="addHabit">
+            + Habit
+        </button>
+
+    </div>
+
+    <div id="habit-list">
+
+        <!-- Habit akan dibuat melalui JavaScript -->
+
+    </div>
+
+</section>
+
+<!-- Achievement -->
+
+<section class="achievement-section">
+
+    <h2>🏆 Achievement</h2>
+
+    <div class="achievement-list">
+
+        <div class="achievement">
+            🥉 7 Hari Berturut
+        </div>
+
+        <div class="achievement">
+            🥈 30 Hari Berturut
+        </div>
+
+        <div class="achievement">
+            🥇 100 Hari Berturut
+        </div>
+
+        <div class="achievement">
+            👑 Master Habit
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Statistik -->
+
+<section class="stats-section">
+
+    <h2>📊 Statistik</h2>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h3>Total Habit</h3>
+            <p id="totalHabit">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Selesai</h3>
+            <p id="completedHabit">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>XP</h3>
+            <p id="xp">0 XP</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Pohon</h3>
+            <p id="trees">0</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Kalender -->
+
+<section class="calendar-section">
+
+    <h2>📅 Kalender</h2>
+
+    <div id="calendar">
+
+        <!-- Kalender dibuat JS -->
+
+    </div>
+
+</section>
+
+<!-- Bottom Navigation -->
+
+<nav class="bottom-nav">
+
+    <button>
+        🏡
+        <span>Home</span>
+    </button>
+
+    <button>
+        📊
+        <span>Statistik</span>
+    </button>
+
+</nav>
+
+<!-- Popup Tambah Habit -->
+
+<div class="modal" id="habitModal">
+
+    <div class="modal-content">
+
+        <h2>Tambah Habit</h2>
+
+        <input
+            type="text"
+            id="habitName"
+            placeholder="Nama Habit">
+
+        <select id="habitXP">
+
+            <option value="5">5 XP</option>
+            <option value="10">10 XP</option>
+            <option value="20">20 XP</option>
+            <option value="30">30 XP</option>
+
+        </select>
+
+        <div class="modal-button">
+
+            <button id="saveHabit">
+                Simpan
+            </button>
+
+            <button id="closeModal">
+                Batal
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Floating Button -->
+
+<button class="fab" id="fab">
+    +
+</button>
+
+<footer>
+
+    <p>
+        🌱 Habit Garden © 2026
+    </p>
+
+</footer>
+
+<script src="js/database.js"></script>
+<script src="js/habit.js"></script>
+<script src="js/garden.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/notification.js"></script>
+<script src="js/backup.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/ui.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
