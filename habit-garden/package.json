@@ -1,29 +1,33 @@
 {
   "name": "garden",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Habit Garden PWA with Capacitor",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "npx http-server www -p 8080",
+    "sync": "npx cap sync",
+    "copy": "npx cap copy",
+    "android": "npx cap open android",
+    "build": "echo \"No build step required for static web assets\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bagaspras/garden.git"
+    "url": "https://github.com/bagaspras/garden.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/bagaspras/garden/issues"
-  },
-  "homepage": "https://github.com/bagaspras/garden#readme",
+  "keywords": [
+    "capacitor",
+    "pwa",
+    "garden"
+  ],
+  "author": "Bagas Pras",
+  "license": "MIT",
   "dependencies": {
     "@capacitor/android": "^8.5.0",
-    "@capacitor/cli": "^8.5.0",
     "@capacitor/core": "^8.5.0"
   },
   "devDependencies": {
-    "@capacitor/assets": "^3.0.5"
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.0",
+    "http-server": "^14.1.1"
   }
 }
