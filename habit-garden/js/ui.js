@@ -210,16 +210,7 @@ const UI = {
       document.getElementById('xp').textContent = xp + ' XP';
       document.getElementById('level').textContent = level;
 
-      // Get longest streak
-      let maxStreak = 0;
-      for (const habit of this.currentHabits) {
-        const streak = await Habit.getStreak(habit.id);
-        maxStreak = Math.max(maxStreak, streak);
-      }
-      document.getElementById('streak').textContent = maxStreak + ' Hari';
-      document.getElementById('garden-health').textContent = Math.min(100, 50 + maxStreak) + '%';
-      
-      document.getElementById('trees').textContent = Math.floor(completed / 5);
+      await Stats.render();
     } catch (error) {
       console.error('Error updating stats:', error);
     }

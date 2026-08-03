@@ -79,14 +79,13 @@ const Habit = {
     const logs = await this.getHabitLogs(habitId);
     if (logs.length === 0) return 0;
 
+    const completedDates = new Set(logs.map(log => log.date).filter(Boolean));
     let streak = 0;
     let currentDate = new Date();
 
     while (true) {
-      const dateStr = currentDate.toLocaleDateString('id-ID');
-      const hasLog = logs.some(log => log.date === dateStr);
-
-      if (!hasLog) break;
+      const dateKey = this.getDateKey(currentDate);
+      if (!completedDates.has(dateKey)) break;
 
       streak++;
       currentDate.setDate(currentDate.getDate() - 1);
