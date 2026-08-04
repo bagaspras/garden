@@ -6,11 +6,19 @@ workflows:
       node: 22
 
     scripts:
-      - npm install
-      - npx cap sync android
-      - cd android
-      - chmod +x gradlew
-      - ./gradlew assembleDebug
+      - name: Install dependencies
+        script: |
+          npm install
+
+      - name: Sync Capacitor
+        script: |
+          npx cap sync android
+
+      - name: Build APK
+        script: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
     artifacts:
       - android/app/build/outputs/**/*.apk
